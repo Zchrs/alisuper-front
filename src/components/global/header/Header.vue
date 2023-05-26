@@ -6,12 +6,23 @@
       </div>
       <div class="head-top__menu">
         <ul>
-          <BoxInfo icon="user"/>
-          <BoxInfo icon="cart"/>
+          <BoxInfo
+           icon="user-red"
+           title="Bienvenido"
+           />
+          <BoxInfo
+           icon="cart-red"
+           title="¡Carrito vacío!"
+           text="Inicia sesión."
+           text-a="o"
+           text-b="Regístrate"
+           empty-cart="true"
+           img="empty-cart"
+           />
           <li v-for="({ text }, index) in menuList"
           :key="index"
           
-          >{{ text }}<i><img :src="getFile('img/icons', `arrow-down`, 'svg')"></i></li>
+          >{{ text }}<i><img :src="getFile('img/icons', `arrow-down-reed`, 'svg')"></i></li>
           
         </ul>
       </div>
@@ -122,6 +133,7 @@ align-items: center;
           display: block;
           height: 6px;
           transition: all ease .3s;
+          filter: grayscale(100%);
         }
 
         &:hover{
@@ -131,6 +143,7 @@ align-items: center;
           img{
             transform: rotateZ(180deg);
             transition: all ease .3s;
+            filter: grayscale(0%);
           }
         }
       }

@@ -1,11 +1,18 @@
+import { default } from './global/form/Alert.vue';
 <template>
   <div class="loginbox">
     <div class="loginbox-subloginbox">
       <img class="loginbox-img" :src="getFile('img/icons', `${icon}`, 'svg')">
-      <img class="loginbox__img" :src="getFile('img/icons', `arrow-down`, 'svg')">
+      <img class="loginbox__img" :src="getFile('img/icons', `arrow-down-reed`, 'svg')">
     </div>
     <div class="loginbox__box">
-      <h2>{{ title }}</h2>
+      <div class="loginbox-empty" v-if="emptyCart">
+        <img :src="getFile('img/images', `${img}`, 'svg')">
+        <h2>{{ title }}</h2>
+      </div>
+      <a href="" > {{ text }} </a>
+      <p> {{ textA }} </p>
+      <a href="" > {{ textB }} </a>
     </div>
   </div>
 </template>
@@ -21,12 +28,34 @@ const props = defineProps({
   text: {
     type: String,
   },
+  textA: {
+    type: String,
+  },
+  textB: {
+    type: String,
+  },
+  textC: {
+    type: String,
+  },
   icon: {
+    type: String,
+  },
+  img: {
     type: String,
   },
   link: {
     type: String,
   },
+  linkA: {
+    type: String,
+  },
+  linkB: {
+    type: String,
+  },
+  emptyCart: {
+    type: Boolean,
+    default: false,
+  }
 });
 </script>
 
@@ -34,18 +63,38 @@ const props = defineProps({
 .loginbox {
   position: relative;
   cursor: pointer;
+  transition: all ease .3s;
+
+  &-empty{
+    display: grid;
+    place-items: center;
+    opacity: .5;
+
+    h2{
+      opacity: .5;
+    }
+  }
 
     &-img{
         height: 18px;
+        filter: grayscale(100%);
+        transition: all ease .3s;
+    }
+    &:hover &-img{
+      filter: grayscale(0%);
+      transition: all ease .3s;
     }
     &__img{
       display: block;
       height: 6px;
       transition: all ease .3s;
+      filter: grayscale(100%);
     }
 
     &:hover &__img{
         transform: rotateZ(180deg);
+        filter: grayscale(0%);
+        transition: all ease .3s;
     }
 
   &-subloginbox{
@@ -57,7 +106,6 @@ const props = defineProps({
     display: grid;
     position: absolute;
     background: white;
-    text-align: center;
     cursor: default;
     overflow: hidden;
     border-radius: 0px 0px 10px 10px;
