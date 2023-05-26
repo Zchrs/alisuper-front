@@ -7,6 +7,7 @@
       <div class="head-top__menu">
         <ul>
           <LoginBox icon="user"/>
+          <LoginBox icon="cart"/>
           <li v-for="({ text }, index) in menuList"
           :key="index"
           
@@ -128,6 +129,7 @@ align-items: center;
           transition: all ease .3s;
 
           img{
+            fill: #1c87c9;
             transform: rotateZ(180deg);
             transition: all ease .3s;
           }
