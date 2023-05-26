@@ -6,7 +6,8 @@
       </div>
       <div class="head-top__menu">
         <ul>
-          <LoginBox icon="user"/>
+          <BoxInfo icon="user"/>
+          <BoxInfo icon="cart"/>
           <li v-for="({ text }, index) in menuList"
           :key="index"
           
@@ -33,7 +34,7 @@
 </template>
 
 <script setup>
-import LoginBox from '../../LoginBox.vue';
+import BoxInfo from '../../BoxInfo.vue';
 
 
 const menuList = [
