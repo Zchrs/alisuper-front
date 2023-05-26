@@ -1,0 +1,59 @@
+@import './sass/colors';
+@import './sass/typography';
+@import './sass/resetFontSize';
+@import './sass/components';
+@import './sass/vue-tel-input';
+// @import 'bootstrap/scss/bootstrap';
+
+
+.click:hover{
+    cursor: pointer;
+}
+
+// BOOTSTRAP
+
+button:disabled,
+button[disabled]{
+  opacity: 0.5;
+}
+
+
+.b-skeleton-button{
+    height: 45px !important;
+    margin: auto !important;
+    width: 100% !important;
+    border-radius: 10rem;
+}
+
+.b-skeleton-text{
+    height: 30px !important;
+    border-radius: 10px;
+}
+
+.b-skeleton-input{
+    border-radius: 12px;
+    height: 40px;
+}
+
+.b-skeleton-card {
+    border-radius: 24px;
+    height: 200px;
+}
+
+
+// NOTIFICACION
+
+
+.Vue-Toastification__toast--error{
+    background-color: white !important;
+    color: black !important;
+    border-right: 7px solid #ff5252 !important;
+    border-bottom: 2px solid #ff5252 !important;
+}
+
+.Vue-Toastification__toast--success {
+    background-color: white !important;
+    color: black !important;
+    border-right: 7px solid #4caf50 !important;
+    border-bottom: 2px solid #4caf50 !important;
+}
