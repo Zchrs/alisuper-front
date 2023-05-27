@@ -8,6 +8,7 @@
         <ul>
           <BoxInfo
            icon="user-red"
+           btns="true"
            title="Bienvenido"
            />
           <BoxInfo
@@ -22,8 +23,11 @@
            />
           <li v-for="({ text }, index) in menuList"
           :key="index"
-          
-          >{{ text }}<i><img :src="getFile('img/icons', `arrow-down-reed`, 'svg')"></i></li>
+          >{{ text }}
+            <i>
+              <img :src="getFile('img/icons', `arrow-down-reed`, 'svg')">
+            </i>
+          </li>
           
         </ul>
       </div>
@@ -46,8 +50,6 @@
 </template>
 
 <script setup>
-import BoxInfo from '../../BoxInfo.vue';
-
 
 const menuList = [
   { 

@@ -5,9 +5,6 @@ import { default } from './global/form/Alert.vue';
       <img class="loginbox-img" :src="getFile('img/icons', `${icon}`, 'svg')">
       <img class="loginbox__img" :src="getFile('img/icons', `arrow-down-reed`, 'svg')">
     </div>
-    <div class="loginbox__buttons" v-if="buttons">
-        <h3 class="loginbox__h3">{{ title }}</h3>
-    </div>
     <div class="loginbox__box">
       <div class="loginbox-empty" v-if="emptyCart">
         <img :src="getFile('img/images', `${img}`, 'svg')">
@@ -18,11 +15,20 @@ import { default } from './global/form/Alert.vue';
         <p class="loginbox__p">{{ textA }} </p>
          &nbsp; <a class="loginbox__a" href="" >{{ textB }}</a>
       </div>
+      <div class="loginbox__buttons" v-if="btns">
+          <h3 class="loginbox__h3">{{ title }}</h3>
+          <p class="loginbox__p">{{ text }}</p>
+          <div class="loginbox__btns">
+            <BaseButton label="Iniciar sesión" class="small-outline-red"/>
+            <BaseButton label="Registrarme" class="small-red"/>
+          </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import BaseButton from '../../components/BaseButton.vue'
 const props = defineProps({
   title: {
     type: String,
@@ -65,7 +71,7 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  buttons: {
+  btns: {
     type: Boolean,
     default: false,
   }
@@ -112,9 +118,14 @@ const props = defineProps({
     display: flex;
     justify-content: center;
   }
-  &-buttons{
+  &__buttons{
     display: grid;
-    place-items: center;
+    gap: 10px;
+  }
+
+  &__btns{
+    display: grid;
+    gap: 8px;
   }
 
     &-img{
