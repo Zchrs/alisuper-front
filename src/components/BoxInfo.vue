@@ -87,7 +87,7 @@ const props = defineProps({
     font-weight: 800;
   }
   &__p{
-    font-size: 16px;
+    font-size: 14px;
   }
   &__a{
     font-size: 14px;
@@ -111,6 +111,10 @@ const props = defineProps({
   &-texts{
     display: flex;
     justify-content: center;
+  }
+  &-buttons{
+    display: grid;
+    place-items: center;
   }
 
     &-img{
