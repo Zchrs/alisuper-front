@@ -5,14 +5,19 @@ import { default } from './global/form/Alert.vue';
       <img class="loginbox-img" :src="getFile('img/icons', `${icon}`, 'svg')">
       <img class="loginbox__img" :src="getFile('img/icons', `arrow-down-reed`, 'svg')">
     </div>
+    <div class="loginbox__buttons" v-if="buttons">
+        <h3 class="loginbox__h3">{{ title }}</h3>
+    </div>
     <div class="loginbox__box">
       <div class="loginbox-empty" v-if="emptyCart">
         <img :src="getFile('img/images', `${img}`, 'svg')">
-        <h2>{{ title }}</h2>
+        <h2 class="loginbox__h2">{{ title }}</h2>
       </div>
-      <a href="" > {{ text }} </a>
-      <p> {{ textA }} </p>
-      <a href="" > {{ textB }} </a>
+      <div v-if="texts" class="loginbox-texts">
+        <a class="loginbox__a" href="" >{{ text }}</a> &nbsp;
+        <p class="loginbox__p">{{ textA }} </p>
+         &nbsp; <a class="loginbox__a" href="" >{{ textB }}</a>
+      </div>
     </div>
   </div>
 </template>
@@ -55,6 +60,14 @@ const props = defineProps({
   emptyCart: {
     type: Boolean,
     default: false,
+  },
+  texts: {
+    type: Boolean,
+    default: false,
+  },
+  buttons: {
+    type: Boolean,
+    default: false,
   }
 });
 </script>
@@ -65,6 +78,27 @@ const props = defineProps({
   cursor: pointer;
   transition: all ease .3s;
 
+  &__h3{
+    font-size: 18px;
+    font-weight: 700;
+  }
+  &__h2{
+    font-size: 20px;
+    font-weight: 800;
+  }
+  &__p{
+    font-size: 16px;
+  }
+  &__a{
+    font-size: 14px;
+    text-decoration: none;
+    color: #EC3337;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
   &-empty{
     display: grid;
     place-items: center;
@@ -73,6 +107,10 @@ const props = defineProps({
     h2{
       opacity: .5;
     }
+  }
+  &-texts{
+    display: flex;
+    justify-content: center;
   }
 
     &-img{
@@ -104,17 +142,18 @@ const props = defineProps({
   }
   &__box{
     display: grid;
+    gap: 8px;
     position: absolute;
     background: white;
     cursor: default;
     overflow: hidden;
     border-radius: 0px 0px 10px 10px;
     transition: all ease .3s;
+    box-shadow: gray 1px 2px 4px;
     width: 0px;
     height: 0;
     padding: 0px;
     right: 0;
- 
   }
 
   &:hover &__box{
@@ -124,7 +163,6 @@ const props = defineProps({
     height: fit-content;
     padding: 16px;
     }
-
 }
 @keyframes boxes {
   0%{

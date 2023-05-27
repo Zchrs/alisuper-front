@@ -13,11 +13,12 @@
           <BoxInfo
            icon="cart-red"
            title="¡Carrito vacío!"
-           text="Inicia sesión."
+           text="Inicia sesión"
            text-a="o"
            text-b="Regístrate"
            empty-cart="true"
            img="empty-cart"
+           texts="true"
            />
           <li v-for="({ text }, index) in menuList"
           :key="index"
