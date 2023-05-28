@@ -1,7 +1,7 @@
 import { createStore } from 'vuex'
 
 import auth from './modules/auth'
-import interceptors from './modules/interceptors'
+// import interceptors from './modules/interceptors'
 import news from './modules/news'
 import signals from './modules/signals'
 import user from './modules/user'
@@ -25,7 +25,7 @@ export default createStore({
   actions: {},
   modules: {
     auth,
-    interceptors,
+    // interceptors,
     news,
     signals,
     user,

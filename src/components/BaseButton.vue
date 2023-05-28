@@ -294,12 +294,12 @@ const props = defineProps({
     height: 40px;
     background: #EC3337;
     border-radius: 10px;
-    padding: 8px 16px 8px 8px;
+    padding: 5px 16px;
     color: white;
     width: 100%;
     height: fit-content;
     font-weight: 400;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 140%;
     img {
       margin-top: -2px;
@@ -313,13 +313,13 @@ const props = defineProps({
     height: 40px;
     background: transparent;
     border-radius: 10px;
-    padding: 8px 16px 8px 8px;
+    padding: 5px 16px;
     color: #EC3337;
     border: 1px solid #EC3337;
     width: 100%;
     height: fit-content;
     font-weight: 400;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 140%;
     img {
       margin-top: -2px;

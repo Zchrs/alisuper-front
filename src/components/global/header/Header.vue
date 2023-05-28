@@ -1,3 +1,4 @@
+import { default } from '../form/Alert.vue';
 <template>
   <div class="head">
     <div class="head-top">
@@ -10,22 +11,34 @@
            icon="user-red"
            btns="true"
            title="Bienvenido"
+           social="true"
            />
           <BoxInfo
            icon="cart-red"
            title="¡Carrito vacío!"
            text="Inicia sesión"
            text-a="o"
-           text-b="Regístrate"
+           text-b="Regístrate gratis"
            empty-cart="true"
            img="empty-cart"
            texts="true"
+           
            />
-          <li v-for="({ text }, index) in menuList"
+           <BoxInfo
+           icon="letter"
+           texts="true"
+           title-a="No tienes mensajes sin leér"
+           text-c="Aquí encontrarás tus mensajes sin leer. Inicia sesión ahora."
+           btnlogin="true"
+           new-user="true"
+           text-d="¿Nuevo en Alisuper? ¡Haz clic en registrarme y comienza a comprar o vender!"
+           />
+          <lang />
+          <li v-for="({ text, icon, arrow }, index) in menuList"
           :key="index"
           >{{ text }}
-            <i>
-              <img :src="getFile('img/icons', `arrow-down-reed`, 'svg')">
+            <i v-if="arrow">
+              <img :src="getFile('img/icons', `${icon}`, 'svg')">
             </i>
           </li>
           
@@ -50,27 +63,35 @@
 </template>
 
 <script setup>
+import Lang from "../../Lang.vue";
+import { ref } from "vue";
+
+const setActive = ref(0);
+
+const i = defineProps({
+  arrow: {
+    type: Boolean,
+    default: false,
+  },
+  icon: {
+    type: String,
+  }
+})
 
 const menuList = [
   { 
     name: 'login', 
     route: 'auth/login', 
-    text: 'Iniciar sesión' 
-  },
-  { 
-    name: 'register', 
-    route: 'auth/register', 
-    text: 'Registrarme' 
-  },
-  { 
-    name: 'cart', 
-    route: 'cart', 
-    text: 'Carrito' 
+    text: 'Registrarme', 
+    icon: 'arrow-down-reed',
+    // arrow: true,
   },
   { 
     name: 'help', 
     route: 'helpcenter', 
-    text: 'Ayuda' 
+    text: 'Ayuda',
+    icon: 'arrow-down-reed',
+    // arrow: true,
   },
 ];
 const buttonsList = [
@@ -197,5 +218,8 @@ align-items: center;
     margin-top: 55px;
   }
 }
+}
+.isactive{
+  display: none;
 }
 </style>
