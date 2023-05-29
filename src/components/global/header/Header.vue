@@ -127,6 +127,7 @@ display: grid;
 width: 100%;
 align-items: center;
 
+
 &-top{
   padding: 10px;
   display: flex;
@@ -192,13 +193,20 @@ align-items: center;
   place-items: center;
   padding: 0;
 
+
   ul{
     margin-top: 0px;
     padding: 0;
     display: flex;
     list-style: none;
     gap: 20px;
+    margin: 0 auto;
     justify-content: center;
+    
+  @media (max-width: 700px) {
+    width: 80%;
+    gap: 5px;
+  }
 
     li{
       display: grid;
@@ -209,6 +217,11 @@ align-items: center;
       place-items: center;
       background: #EC3337;
       font-size: 1.6rem;
+
+      @media (max-width: 700px) {
+        padding: 6px 18px;
+        font-size: 1.4rem;
+      }
     }
   }
   &__container{
