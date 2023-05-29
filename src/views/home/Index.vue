@@ -4,14 +4,27 @@
       <div class="home-header__contain">
         <div  class="home-header__contain-item">
           <img :src="getFile('img/images', `vegetales`, 'jpg')">
+          <div class="home-titles">
+            <h2 class="home__h2">
+              Dale un vistazo a la sección de vegetales.
+            </h2>
+            <p class="home__p">
+              Nuestros vegetales 100% orgánicos y duraderos, son
+              cultivados mediante procesos hydropóndicos.
+              <strong class="home__strong"><a href="">Leer más</a></strong>
+            </p>
+          </div>
         </div>
         <div  class="home-header__contain-item1">
+          <h2></h2>
           <img :src="getFile('img/images', `frutas`, 'jpg')">
         </div>
         <div  class="home-header__contain-item2">
+          <h2></h2>
           <img :src="getFile('img/images', `granos`, 'jpg')">
         </div>
         <div  class="home-header__contain-item3">
+          <h2></h2>
           <img :src="getFile('img/images', `canasta-basica`, 'jpg')">
         </div>
       </div>
@@ -30,6 +43,30 @@
   background: rgb(241, 237, 237);
   border-radius: 18px 18px 0px 0px;
   overflow: hidden;
+
+  &__h2{
+    position: relative;
+    font-size: 22px;
+    text-align: left;
+    z-index: 30;
+    transition: all ease-out .4s;
+    transform: skewX(15deg);
+    margin-left: -120%; 
+  }
+  &__p{
+    position: relative;
+    text-align: left;
+    width: 320px;
+    z-index: 30;
+    transform: skewX(15deg);
+    transition: all ease-out .4s;
+    margin-left: 120%; 
+  }
+  &__strong{
+    position: relative;
+    text-align: center;
+    z-index: 30;
+  }
   
   &-header{
     display: grid;
@@ -45,6 +82,8 @@
       gap: 5px;
 
       &-item{
+        display: grid;
+        place-items: center;
         grid-row: 1 / 6 ;
         grid-column: 1 / 3 ;
         width: 120% ;
@@ -59,23 +98,67 @@
           top: -40px;
           transform: skewX(15deg);
         }
+        &::before{
+          content: "";
+          transition: all ease .4s;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 10;
+          left: 0;
+        }
+        
+        &:hover::before{
+          z-index: 10;
+          transition: all ease .4s;
+          background: rgba(255, 255, 255, 0.541);
+          backdrop-filter: blur(2px);
+        }
+        &:hover h2{
+          transition: all ease-out .4s;
+          margin-left: 0%;
+        }
+        &:hover p{
+          transition: all ease-out .4s;
+          margin-left: 0%;
+        }
       }
       &-item1{
+        position: relative;
         grid-row: 1 / 3;
         grid-column: 3 / 5 ;
         margin-left: 54px;
         width: auto ;
         height: auto ;
+        transition: all ease .4s;
          transform: skewX(-15deg);
          background: rebeccapurple;
          overflow: hidden;
          border-radius: 15px;
+
 
         img{
           position: absolute;
           width: 120%;
           left: -30px;
           transform: skewX(15deg);
+        }
+
+        &::before{
+          content: "";
+          transition: all ease .4s;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 10;
+          left: 0;
+        }
+        
+        &:hover::before{
+          z-index: 10;
+          transition: all ease .4s;
+          background: rgba(255, 255, 255, 0.541);
+          backdrop-filter: blur(2px);
         }
       }
       &-item2{
@@ -95,6 +178,22 @@
           left: -30px;
           transform: skewX(15deg);
         }
+                &::before{
+          content: "";
+          transition: all ease .4s;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 10;
+          left: 0;
+        }
+        
+        &:hover::before{
+          z-index: 10;
+          transition: all ease .4s;
+          background: rgba(255, 255, 255, 0.541);
+          backdrop-filter: blur(2px);
+        }
       }
       &-item3{
         grid-row: 3 / 6 ;
@@ -111,6 +210,22 @@
           height: 100%;
           left: -30px;
           transform: skewX(15deg);
+        }
+                &::before{
+          content: "";
+          transition: all ease .4s;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 10;
+          left: 0;
+        }
+        
+        &:hover::before{
+          z-index: 10;
+          transition: all ease .4s;
+          background: rgba(255, 255, 255, 0.541);
+          backdrop-filter: blur(2px);
         }
       }
     }
