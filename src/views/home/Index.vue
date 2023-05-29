@@ -6,7 +6,7 @@
           <img :src="getFile('img/images', `vegetales`, 'jpg')">
           <div class="home-titles">
             <h2 class="home__h2">
-              Dale un vistazo a la sección de vegetales.
+              Date un vistazo por nuestra sección vegetales.
             </h2>
             <p class="home__p">
               Nuestros vegetales 100% orgánicos y duraderos, son
@@ -16,8 +16,17 @@
           </div>
         </div>
         <div  class="home-header__contain-item1">
-          <h2></h2>
           <img :src="getFile('img/images', `frutas`, 'jpg')">
+          <div class="home-titles-a">
+            <h3 class="home__h3">
+              Date un vistazo por nuestra sección de frutas.
+            </h3>
+            <h4 class="home__h4">
+              Nuestros vegetales 100% orgánicas y duraderas, son
+              cultivadas mediante procesos hydropóndicos.
+              <strong class="home__strong"><a href="">Leer más</a></strong>
+            </h4>
+          </div>
         </div>
         <div  class="home-header__contain-item2">
           <h2></h2>
@@ -44,6 +53,25 @@
   border-radius: 18px 18px 0px 0px;
   overflow: hidden;
 
+  &-titles{
+    display: grid;
+    gap: 5px;
+    padding-left: 13%;
+
+    @media (max-width: 1024px) {
+      padding-left: 20%;
+    }
+  }
+  &-titles-a{
+    display: grid;
+    gap: 5px;
+    padding-left: 0%;
+
+    @media (max-width: 1024px) {
+      padding-left: 5%;
+    }
+  }
+
   &__h2{
     position: relative;
     font-size: 22px;
@@ -51,7 +79,7 @@
     z-index: 30;
     transition: all ease-out .4s;
     transform: skewX(15deg);
-    margin-left: -120%; 
+    margin-left: -130%; 
   }
   &__p{
     position: relative;
@@ -60,7 +88,35 @@
     z-index: 30;
     transform: skewX(15deg);
     transition: all ease-out .4s;
-    margin-left: 120%; 
+    margin-left: 140%; 
+  }
+  &__strong{
+    position: relative;
+    text-align: center;
+    z-index: 30;
+  }
+  &__h3{
+    position: relative;
+    font-size: 22px;
+    text-align: left;
+    z-index: 30;
+    transition: all ease-out .4s;
+    transform: skewX(15deg);
+    margin-left: -230%; 
+
+    @media (max-width: 1024px) {
+      font-size: 18px;
+    }
+  }
+  &__h4{
+    position: relative;
+    text-align: left;
+    width: 320px;
+    z-index: 30;
+    transform: skewX(15deg);
+    transition: all ease-out .4s;
+    margin-left: 140%; 
+    font-weight: 400;
   }
   &__strong{
     position: relative;
@@ -120,11 +176,12 @@
         }
         &:hover p{
           transition: all ease-out .4s;
-          margin-left: 0%;
+          margin-left: 3%;
         }
       }
       &-item1{
-        position: relative;
+        display: grid;
+        place-items: center;
         grid-row: 1 / 3;
         grid-column: 3 / 5 ;
         margin-left: 54px;
@@ -159,6 +216,14 @@
           transition: all ease .4s;
           background: rgba(255, 255, 255, 0.541);
           backdrop-filter: blur(2px);
+        }
+        &:hover h3{
+          transition: all ease-out .4s;
+          margin-left: 0%;
+        }
+        &:hover h4{
+          transition: all ease-out .4s;
+          margin-left: 3%;
         }
       }
       &-item2{
