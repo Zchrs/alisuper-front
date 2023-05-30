@@ -257,7 +257,7 @@ align-items: center;
     li{
       display: grid;
       padding: 8px 38px;
-      height: 45px;
+      height: 40px;
       border-radius: 10px 10px 0px 0px;
       cursor: pointer;
       place-items: center;
