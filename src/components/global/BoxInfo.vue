@@ -3,7 +3,7 @@ import { default } from './global/form/Alert.vue';
   <div class="loginbox">
     <div class="loginbox-subloginbox">
       <img class="loginbox-img" :src="getFile('img/icons', `${icon}`, 'svg')">
-      <img class="loginbox__img" :src="getFile('img/icons', `arrow-down-reed`, 'svg')">
+      <img v-if="arrow" class="loginbox__img" :src="getFile('img/icons', `arrow-down-reed`, 'svg')">
     </div>
     <div class="loginbox__box">
       <div class="loginbox-empty" v-if="emptyCart">
@@ -113,6 +113,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  arrow: {
+    type: Boolean,
+    default: false,
+  },
 });
 </script>
 
@@ -121,6 +125,7 @@ const props = defineProps({
   position: relative;
   cursor: pointer;
   transition: all ease .3s;
+  z-index: 9999;
 
   &__container{
     display: grid;
@@ -219,6 +224,7 @@ const props = defineProps({
   &__box{
     display: grid;
     gap: 8px;
+    z-index: 9999;
     position: absolute;
     background: white;
     cursor: default;
@@ -230,6 +236,11 @@ const props = defineProps({
     height: 0;
     padding: 0px;
     right: 0;
+
+    @media (max-width: 600px) {
+      left: -45px;
+      z-index: 9999;
+    }
   }
 
   &:hover &__box{
@@ -238,6 +249,7 @@ const props = defineProps({
     width: 270px;
     height: fit-content;
     padding: 16px;
+    z-index: 9999;
     }
 
     &__social{

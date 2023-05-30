@@ -26,6 +26,9 @@ import Footer from '../components/global/footer/Footer.vue';
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+  }
 .layout{
     display: grid;
     width: 100%;
@@ -49,9 +52,8 @@ import Footer from '../components/global/footer/Footer.vue';
 
     &-container{
         display: grid;
-        height: 100%;
+        height: fit-content;
         width: 100%;
-        min-height: 100vh;
         padding: 0 5%;
         margin-top: -50px;
 
@@ -66,7 +68,6 @@ import Footer from '../components/global/footer/Footer.vue';
         display: grid;
         width: 100%;
         height: fit-content;
-        background: black;
         color: white;
     }
 }

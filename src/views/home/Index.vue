@@ -167,8 +167,11 @@ import CardProducts from "../../components/CardProducts.vue";
 
 <style lang="scss" scoped>
 .home{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: fit-content;
   border-radius: 18px 18px 0px 0px;
-  display: grid;
 
   &-titles{
     display: grid;
@@ -219,6 +222,7 @@ import CardProducts from "../../components/CardProducts.vue";
   &__container{
     display: grid;
     padding: 8px;
+    gap: 18px;
 
     &-contain{
       display: grid;
@@ -413,11 +417,6 @@ import CardProducts from "../../components/CardProducts.vue";
     @media (max-width: 920px) {
       transform: skewX(0deg);
     }
-  }
-  &__strong{
-    position: relative;
-    text-align: center;
-    z-index: 30;
   }
   
   &-header{

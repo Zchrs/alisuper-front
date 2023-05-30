@@ -7,12 +7,33 @@ import { default } from '../form/Alert.vue';
       </div>
       <div class="head-top__menu">
         <ul>
-          <BoxInfo icon="user-red" btns="true" title="Bienvenido" social="true" />
-          <BoxInfo icon="cart-red" title="¡Carrito vacío!" text="Inicia sesión" text-a="o" text-b="Regístrate gratis"
-            empty-cart="true" img="empty-cart" texts="true" />
-          <BoxInfo icon="letter" texts="true" title-a="No tienes mensajes sin leér"
-            text-c="Aquí encontrarás tus mensajes sin leer. Inicia sesión ahora." btnlogin="true" new-user="true"
-            text-d="¿Nuevo en Alisuper? ¡Haz clic en registrarme y comienza a comprar o vender!" />
+          <BoxInfo 
+            arrow="true"
+            icon="user-red" 
+            btns="true" 
+            title="Bienvenido" 
+            social="true" />
+          <BoxInfo 
+            arrow="true"
+            icon="cart-red" 
+            title="¡Carrito vacío!" 
+            text="Inicia sesión" 
+            text-a="o" 
+            text-b="Regístrate gratis"
+            empty-cart="true" 
+            img="empty-cart" 
+            texts="true" 
+          />
+          <BoxInfo 
+            arrow="true"
+            icon="letter" 
+            texts="true" 
+            title-a="No tienes mensajes sin leér"
+            text-c="Aquí encontrarás tus mensajes sin leer. Inicia sesión ahora." 
+            btnlogin="true" 
+            new-user="true"
+            text-d="¿Nuevo en Alisuper? ¡Haz clic en registrarme y comienza a comprar o vender!" 
+          />
           <lang />
           <li v-for="({ text, icon, arrow }, index) in menuList" :key="index">{{ text }}
             <i v-if="arrow">
@@ -131,18 +152,19 @@ const console = () => {
       align-items: center;
       width: fit-content;
       background: transparent;
+      z-index: 9999;
 
 
       @media (max-width: 600px) {
         position: fixed;
-        display: flex;
+        display: none;
         justify-content: center;
+        z-index: 10000;
         top: 70px;
         left: 0;
         background: white;
         width: 100%;
-        height: 0%;
-        overflow: hidden;
+        height: 50px;
       }
 
       ul {
@@ -150,10 +172,6 @@ const console = () => {
         list-style: none;
         display: flex;
         gap: 20px;
-
-        @media (max-width: 600px) {
-          display: grid;
-        }
 
         li {
           align-items: center;

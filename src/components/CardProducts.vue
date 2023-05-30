@@ -6,7 +6,10 @@
     <p class="product__p"> {{ description }} </p>
     <p class="product__p"> {{ title }} </p>
     <h2 class="product__h2"> {{ price }} </h2>
-    <p class="product__p2"> {{ previousPrice }} <span> {{ discount }} </span> </p>
+    <div class="product-group">
+      <p class="product__p2"> {{ previousPrice }}</p>
+      <p class="product__p3"> {{ discount }} </p>
+    </div>
     <p class="product__p3"> {{ member }} </p>
   </section>
 </template>
@@ -63,7 +66,7 @@ const productProps = defineProps({
   }
 
   &__p3 {
-    font-size: 12px;
+    font-size: 14px;
     color: #EC3337;
   }
 
@@ -82,4 +85,9 @@ const productProps = defineProps({
       margin: auto;
     }
   }
-}</style>
+  &-group{
+    display: flex;
+    gap: 5px;
+  }
+}
+</style>
