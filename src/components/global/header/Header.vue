@@ -2,63 +2,38 @@ import { default } from '../form/Alert.vue';
 <template>
   <div class="head">
     <div class="head-top">
-      <div @click="$router.push({name: 'home'})" class="head-logo">
+      <div @click="$router.push({ name: 'home' })" class="head-logo">
         <img :src="getFile('img/vector', `logo`, 'svg')">
       </div>
       <div class="head-top__menu">
         <ul>
-          <BoxInfo
-           icon="user-red"
-           btns="true"
-           title="Bienvenido"
-           social="true"
-           />
-          <BoxInfo
-           icon="cart-red"
-           title="¡Carrito vacío!"
-           text="Inicia sesión"
-           text-a="o"
-           text-b="Regístrate gratis"
-           empty-cart="true"
-           img="empty-cart"
-           texts="true"
-           
-           />
-           <BoxInfo
-           icon="letter"
-           texts="true"
-           title-a="No tienes mensajes sin leér"
-           text-c="Aquí encontrarás tus mensajes sin leer. Inicia sesión ahora."
-           btnlogin="true"
-           new-user="true"
-           text-d="¿Nuevo en Alisuper? ¡Haz clic en registrarme y comienza a comprar o vender!"
-           />
+          <BoxInfo icon="user-red" btns="true" title="Bienvenido" social="true" />
+          <BoxInfo icon="cart-red" title="¡Carrito vacío!" text="Inicia sesión" text-a="o" text-b="Regístrate gratis"
+            empty-cart="true" img="empty-cart" texts="true" />
+          <BoxInfo icon="letter" texts="true" title-a="No tienes mensajes sin leér"
+            text-c="Aquí encontrarás tus mensajes sin leer. Inicia sesión ahora." btnlogin="true" new-user="true"
+            text-d="¿Nuevo en Alisuper? ¡Haz clic en registrarme y comienza a comprar o vender!" />
           <lang />
-          <li v-for="({ text, icon, arrow }, index) in menuList"
-          :key="index"
-          >{{ text }}
+          <li v-for="({ text, icon, arrow }, index) in menuList" :key="index">{{ text }}
             <i v-if="arrow">
               <img :src="getFile('img/icons', `${icon}`, 'svg')">
             </i>
           </li>
-          
+
         </ul>
       </div>
     </div>
 
     <div class="head-menu">
-        <div class="head-menu__container">
-          <div>
-            <InputSearch class="large" />
-          </div>
-          <ul>
-            <li v-for="({ text, name, }, index) in buttonsList"
-            :key="index"
-            @click="$router.push({ name })"
-            >{{ text }}</li>
-          </ul>
+      <div class="head-menu__container">
+        <div>
+          <InputSearch class="large" />
         </div>
+        <ul>
+          <li v-for="({ text, name, }, index) in buttonsList" :key="index" @click="$router.push({ name })">{{ text }}</li>
+        </ul>
       </div>
+    </div>
   </div>
 </template>
 
@@ -79,211 +54,217 @@ const i = defineProps({
 })
 
 const menuList = [
-  { 
-    name: 'login', 
-    route: 'auth/login', 
-    text: 'Registrarme', 
+  {
+    name: 'login',
+    route: 'auth/login',
+    text: 'Registrarme',
     icon: 'arrow-down-reed',
     // arrow: true,
   },
-  { 
-    name: 'help', 
-    route: 'helpcenter', 
+  {
+    name: 'help',
+    route: 'helpcenter',
     text: 'Ayuda',
     icon: 'arrow-down-reed',
     // arrow: true,
   },
 ];
 const buttonsList = [
-  { 
-    name: 'home', 
-    route: 'home', 
-    text: 'Inicio' 
+  {
+    name: 'home',
+    route: 'home',
+    text: 'Inicio'
   },
-  { 
-    name: 'fruits', 
-    route: 'products/fruits', 
-    text: 'Frutas' 
+  {
+    name: 'fruits',
+    route: 'products/fruits',
+    text: 'Frutas'
   },
-  { 
-    name: 'vegetables', 
-    route: 'products/vegetables', 
-    text: 'Vegetales' 
+  {
+    name: 'vegetables',
+    route: 'products/vegetables',
+    text: 'Vegetales'
   },
-  { 
-    name: 'grains', 
-    route: 'products/grains', 
-    text: 'Mercado' 
+  {
+    name: 'grains',
+    route: 'products/grains',
+    text: 'Mercado'
   },
 ];
-const console = () =>{
+const console = () => {
   console.log(`Click en ${index}`);
 }
 </script>
 
 <style lang="scss" scoped>
-.head{
-display: grid;
-width: 100%;
-align-items: center;
-
-
-&-top{
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
+.head {
+  display: grid;
   width: 100%;
-  z-index: 999;
-  position: sticky;
-  top: 0;
+  align-items: center;
 
 
-  @media (max-width: 600px) {
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    width: 100%;
-    display: grid;
-    height: 70px;
-    border-bottom: rgba(0, 0, 0, 0.559) 1px solid;
-  }
-
-  &__menu{
-    position: relative;
+  &-top {
+    padding: 10px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    width: fit-content;
-    background: transparent;
-    
+    background: white;
+    width: 100%;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+
 
     @media (max-width: 600px) {
       position: fixed;
-      display: flex;
-      justify-content: center;
-      top: 70px;
-      left: 0;
-      background: white;
+      top: 0;
+      z-index: 999;
       width: 100%;
-      height: 0%;
-      overflow: hidden;
+      display: grid;
+      height: 70px;
+      border-bottom: rgba(0, 0, 0, 0.559) 1px solid;
     }
 
-    ul{
-      align-items: center;
-      list-style: none;
+    &__menu {
+      position: relative;
       display: flex;
-      gap: 20px;
-      
+      align-items: center;
+      width: fit-content;
+      background: transparent;
+
+
       @media (max-width: 600px) {
-        display: grid;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        top: 70px;
+        left: 0;
+        background: white;
+        width: 100%;
+        height: 0%;
+        overflow: hidden;
       }
 
-      li{
+      ul {
         align-items: center;
+        list-style: none;
         display: flex;
-        gap: 5px;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: black;
-        font-weight: 500;
-        transition: all ease .3s;
+        gap: 20px;
 
-        img{
-          display: block;
-          height: 6px;
-          transition: all ease .3s;
-          filter: grayscale(100%);
+        @media (max-width: 600px) {
+          display: grid;
         }
 
-        &:hover{
-          color: #EC3337;
+        li {
+          align-items: center;
+          display: flex;
+          gap: 5px;
+          font-size: 1.5rem;
+          cursor: pointer;
+          color: black;
+          font-weight: 500;
           transition: all ease .3s;
 
-          img{
-            transform: rotateZ(180deg);
+          img {
+            display: block;
+            height: 6px;
             transition: all ease .3s;
-            filter: grayscale(0%);
+            filter: grayscale(100%);
+          }
+
+          &:hover {
+            color: #EC3337;
+            transition: all ease .3s;
+
+            img {
+              transform: rotateZ(180deg);
+              transition: all ease .3s;
+              filter: grayscale(0%);
+            }
           }
         }
       }
-    }
 
-  }
-}
-
-&-logo{
-  cursor: pointer;
-  img{
-    height: 35px;
-
-    @media (max-width: 600px) {
-      height: 45px;
-    }
-    @media (max-width: 399px) {
-      height: 30px;
     }
   }
-}
-&-menu{
-  display: grid;
-  width: 100%;
-  margin: 0 auto;
-  color: white;
-  background: black;
-  height: 250px;
-  place-items: center;
-  padding: 0;
 
-  @media (max-width: 700px) {
-    margin-top: 70px;
-  }
+  &-logo {
+    cursor: pointer;
 
-  ul{
-    margin-top: 0px;
-    padding: 0;
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    margin: 0 auto;
-    justify-content: center;
-    
-  @media (max-width: 700px) {
-    width: 80%;
-    gap: 5px;
-  }
+    img {
+      height: 35px;
 
-    li{
-      display: grid;
-      padding: 8px 38px;
-      height: 40px;
-      border-radius: 10px 10px 0px 0px;
-      cursor: pointer;
-      place-items: center;
-      background: #EC3337;
-      font-size: 1.6rem;
-
-      @media (max-width: 700px) {
-        padding: 6px 16px;
-        font-size: 1.4rem;
+      @media (max-width: 600px) {
+        height: 45px;
       }
+
       @media (max-width: 399px) {
-        padding: 4px 8px;
-        font-size: 1.1rem;
-        height: 35px;
+        height: 30px;
       }
     }
   }
-  &__container{
+
+  &-menu {
     display: grid;
     width: 100%;
-    gap: 10px;
-    margin-top: 55px;
+    margin: 0 auto;
+    color: white;
+    background: black;
+    height: 250px;
+    place-items: center;
+    padding: 0;
+
+    @media (max-width: 700px) {
+      margin-top: 70px;
+    }
+
+    ul {
+      margin-top: 0px;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      margin: 0 auto;
+      justify-content: center;
+
+      @media (max-width: 700px) {
+        width: 80%;
+        gap: 5px;
+      }
+
+      li {
+        display: grid;
+        padding: 8px 38px;
+        height: 40px;
+        border-radius: 10px 10px 0px 0px;
+        cursor: pointer;
+        place-items: center;
+        background: #EC3337;
+        font-size: 1.6rem;
+
+        @media (max-width: 700px) {
+          padding: 6px 16px;
+          font-size: 1.4rem;
+        }
+
+        @media (max-width: 399px) {
+          padding: 4px 8px;
+          font-size: 1.1rem;
+          height: 35px;
+        }
+      }
+    }
+
+    &__container {
+      display: grid;
+      width: 100%;
+      gap: 10px;
+      margin-top: 55px;
+    }
   }
 }
-}
-.isactive{
+
+.isactive {
   display: none;
 }
 </style>

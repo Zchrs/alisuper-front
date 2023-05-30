@@ -41,42 +41,45 @@ const productProps = defineProps({
 </script>
 
 <style lang="scss" scoped>
-.product{
+.product {
   display: grid;
   border-radius: 8px;
   box-shadow: rgb(184, 182, 182) -1px 1px 5px;
   gap: 6px;
   padding: 10px 8px;
 
-  &__p{
+  &__p {
     font-size: 16px;
     font-weight: 500;
   }
-  &__p2{
+
+  &__p2 {
     text-decoration: line-through;
-  
-    span{
+
+    span {
       color: #EC3337;
       text-decoration: none;
     }
   }
-  
-  &__p3{
+
+  &__p3 {
     font-size: 12px;
     color: #EC3337;
   }
-  &__h2{
+
+  &__h2 {
     font-size: 15px;
     font-weight: 700;
   }
 
-  &-contain{
+  &-contain {
     display: grid;
     place-items: center;
-    img{
+
+    img {
       width: 100%;
+      height: 160px;
       margin: auto;
     }
   }
-}
-</style>
+}</style>
