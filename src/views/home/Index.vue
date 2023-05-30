@@ -56,20 +56,75 @@
         </div>
       </div>
     </header>
-    <div class="home-container">
-      <h2>Compra por categoría</h2>
+    <div class="home__container">
+      <h2>Legumbres</h2>
+      <div class="home__container-contain">
+        <CardProducts
+          img="tomates"
+          description="Tomates frescos de la más alta calidad, 100% orgánicos."
+          title="Precio por 1kg"
+          price="Cop $3.990 "
+          previous-price="Cop $4.200"
+          discount="5%"
+          member="10% de descuento para miembros premium"
+        />
+        <CardProducts
+          img="cebolla"
+          description="cebolla fresca de la más alta calidad, 100% orgánica."
+          title="Precio por 1kg"
+          price="Cop $1.365"
+          previous-price="Cop $1.440"
+          discount="5%"
+          member="10% de descuento para miembros premium"
+        />
+        <CardProducts
+          img="cebolla-larga"
+          description="Cebolla larga fresca de la más alta calidad, 100% orgánica."
+          title="Precio por 1kg"
+          price="Cop $2.850 "
+          previous-price="Cop $3.000"
+          discount="5%"
+          member="10% de descuento para miembros premium"
+        />
+        <CardProducts
+          img="ajo"
+          description="Ajo fresco de la más alta calidad, 100% orgánico."
+          title="Precio por 50gr"
+          price="Cop $2.094"
+          previous-price="Cop $2.250"
+          discount="5%"
+          member="10% de descuento para miembros premium"
+        />
+        <CardProducts
+          img="pimenton"
+          description="Pimenton rojo fresco de la más alta calidad, 100% orgánico."
+          title="Precio por 1kg"
+          price="Cop $2.280"
+          previous-price="Cop $2.400"
+          discount="5%"
+          member="10% de descuento para miembros premium"
+        />
+      </div>
+    </div>
+    <div class="home__container">
+      <h2>Frutas</h2>
+      <div class="home__container-contain">
+        
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
+import CardProducts from "../../components/CardProducts.vue";
+
+
 </script>
 
 <style lang="scss" scoped>
 .home{
-  background: rgb(241, 237, 237);
   border-radius: 18px 18px 0px 0px;
-  overflow: hidden;
+  display: grid;
 
   &-titles{
     display: grid;
@@ -114,6 +169,30 @@
 
     @media (max-width: 920px) {
       padding-left: 5%;
+    }
+  }
+
+  &__container{
+    display: grid;
+    padding: 8px;
+
+    &-contain{
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+
+      @media (max-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @media (max-width: 900px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media (max-width: 700px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: 300px) {
+        grid-template-columns: 1fr;
+      }
     }
   }
 
@@ -301,6 +380,7 @@
     display: grid;
     height: 400px;
     overflow: hidden;
+    border-radius: 18px;
 
     @media (max-width: 920px) {
       height: 800px;
@@ -601,10 +681,6 @@
         }
       }
     }
-  }
-  &-container{
-    display: grid;
-    padding: 24px;
   }
 }
 </style>
