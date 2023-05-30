@@ -37,7 +37,17 @@
         <a href="">Haznos un (PQRS)</a>
         <a href="">Políticas de cambio y devoluciones</a>
         <a href="">Cambios y devoluciones</a>
-        <a href="">Actualizar datos.</a>
+        <a href="">Actualizar datos</a>
+      </div>
+      <div class="footer-middle__links">
+        <h2>Información legal</h2>
+        <a href="">Términos y condiciones</a>
+        <a href="">Términos del Marketplace</a>
+        <a href="">Política de privacidad</a>
+        <a href="">Autorización de tratamiento de datos</a>
+        <a href="">Superintendencia de industria y comercio (SIC)</a>
+        <a href="">Derecho de retracto</a>
+        <a href="">Solicitud de reversiones</a>
       </div>
     </div>
     </div>
@@ -69,7 +79,7 @@
   }
   &-middle{
     display: grid;
-    padding: 24px;
+    padding: 32px 24px;
     background: #4c4747;
     place-items: center;
 
@@ -78,10 +88,14 @@
       width: 75%;
       grid-template-columns: repeat(4, 1fr);
       height: fit-content;
-      gap: 12px;
+      gap: 16px;
       
           @media (max-width: 700px) {
             grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+          }
+          @media (max-width: 399px) {
+            grid-template-columns: 1fr;
             width: 100%;
           }
     }
@@ -92,16 +106,22 @@
       display: grid;
       height: fit-content;
       
-      gap: 10px;
+      gap: 8px;
       a{
-        color: white;
+        color: rgb(168, 167, 167);
         text-decoration: none;
         font-size: 16px;
         font-weight: 200;
+
+        &:hover{
+          color: white;
+        }
       }
       h2{
         font-weight: 500;
         font-size: 18px;
+        border-bottom: #575757 1px solid;
+        padding-bottom: 5px;
       }
     }
   }
