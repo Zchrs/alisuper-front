@@ -253,17 +253,17 @@ const props = defineProps({
   &.green {
     background: linear-gradient(0deg, #007a5a, #007a5a), #20b556;
     border-radius: 10px;
-    padding: 8px;
+    padding: 8px 32px;
     gap: 4px;
     color: white;
     width: fit-content;
-    height: fit-content;
+    height: 100%;
     font-weight: 500;
     line-height: 140%;
-    font-size: 14px;
+    font-size: 16px;
     display: grid;
     align-items: center;
-    cursor: default;
+    cursor: pointer;
 
     img {
       margin-top: -2px;

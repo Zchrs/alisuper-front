@@ -48,7 +48,6 @@ import { default } from './global/form/Alert.vue';
 </template>
 
 <script setup>
-import BaseButton from '../../components/BaseButton.vue'
 const props = defineProps({
   title: {
     type: String,
