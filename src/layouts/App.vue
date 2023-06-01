@@ -2,7 +2,9 @@
     <section class="layout">
         <section class="layout__container">
             <header class="layout-header">
-                <Header />
+                <div class="layout-header__container">
+                    <Header />
+                </div>
             </header>
             <section class="layout-container">
                 <div class="layout-container__contain">

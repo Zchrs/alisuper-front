@@ -156,6 +156,56 @@
       />
       </div>
     </div>
+    <div class="home__container">
+      <h2>Granos</h2>
+      <div class="home__container-contain">
+      <CardProducts
+        img="frijol"
+        description="Frijol rojo nacional de la más alta calidad, 100% orgánicos."
+        title="Precio por 1kg"
+        price="Cop $11.384"
+        previous-price="Cop $11.984"
+        discount="5%"
+        member="10% de descuento para miembros premium"
+      />
+      <CardProducts
+        img="garbanzo"
+        description="Garbanzo nacionale de la más alta calidad, 100% orgánicos."
+        title="Precio por 1kg"
+        price="Cop $2.850"
+        previous-price="Cop $3.000"
+        discount="5%"
+        member="10% de descuento para miembros premium"
+      />
+      <CardProducts
+        img="lenteja"
+        description="Lenteja en bolsa nacional de la más alta calidad, 100% orgánicas."
+        title="Precio por 1kg"
+        price="Cop $12.144"
+        previous-price="Cop $12.784"
+        discount="5%"
+        member="10% de descuento para miembros premium"
+      />
+      <CardProducts
+        img="arveja"
+        description="Arveja nacional de la más alta calidad, 100% orgánica."
+        title="Precio por 1kg"
+        price="Cop $6.840"
+        previous-price="Cop $7.200"
+        discount="5%"
+        member="10% de descuento para miembros premium"
+      />
+      <CardProducts
+        img="maiz"
+        description="Maíz nacional de la más alta calidad, 100% orgánicos."
+        title="Precio por 1kg"
+        price="Cop $3.325"
+        previous-price="Cop $3.500"
+        discount="5%"
+        member="10% de descuento para miembros premium"
+      />
+      </div>
+    </div>
   </section>
 </template>
 
