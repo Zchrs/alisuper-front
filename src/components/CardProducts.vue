@@ -1,7 +1,9 @@
+import { default } from './Lang.vue';
 <template>
   <section class="product">
     <div class="product-contain">
-      <img :src="getFile('img/images', `${img}`, 'jpg')">
+      <img v-if="png" :src="getFile('img/images', `${img}`, 'png')">
+      <img v-if="jpg" :src="getFile('img/images', `${img}`, 'jpg')">
     </div>
     <p class="product__p"> {{ description }} </p>
     <p class="product__p"> {{ title }} </p>
@@ -39,6 +41,14 @@ const productProps = defineProps({
   },
   discount: {
     type: Number,
+  },
+  png: {
+    type: Boolean,
+    default: false,
+  },
+  jpg: {
+    type: Boolean,
+    default: false,
   },
 })
 </script>

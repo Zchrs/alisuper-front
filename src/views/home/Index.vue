@@ -67,6 +67,7 @@
           previous-price="Cop $4.200"
           discount="5%"
           member="10% de descuento para miembros premium"
+          jpg="true"
         />
         <CardProducts
           img="cebolla"
@@ -76,6 +77,7 @@
           previous-price="Cop $1.440"
           discount="5%"
           member="10% de descuento para miembros premium"
+          jpg="true"
         />
         <CardProducts
           img="cebolla-larga"
@@ -85,6 +87,7 @@
           previous-price="Cop $3.000"
           discount="5%"
           member="10% de descuento para miembros premium"
+          jpg="true"
         />
         <CardProducts
           img="ajo"
@@ -94,6 +97,7 @@
           previous-price="Cop $2.250"
           discount="5%"
           member="10% de descuento para miembros premium"
+          jpg="true"
         />
         <CardProducts
           img="pimenton"
@@ -103,6 +107,7 @@
           previous-price="Cop $2.400"
           discount="5%"
           member="10% de descuento para miembros premium"
+          jpg="true"
         />
       </div>
     </div>
@@ -117,6 +122,7 @@
         previous-price="Cop $11.984"
         discount="5%"
         member="10% de descuento para miembros premium"
+        jpg="true"
       />
       <CardProducts
         img="banano"
@@ -126,6 +132,7 @@
         previous-price="Cop $3.000"
         discount="5%"
         member="10% de descuento para miembros premium"
+        jpg="true"
       />
       <CardProducts
         img="mora"
@@ -135,6 +142,7 @@
         previous-price="Cop $12.784"
         discount="5%"
         member="10% de descuento para miembros premium"
+        jpg="true"
       />
       <CardProducts
         img="uvas"
@@ -144,6 +152,7 @@
         previous-price="Cop $7.200"
         discount="5%"
         member="10% de descuento para miembros premium"
+        jpg="true"
       />
       <CardProducts
         img="mango"
@@ -153,6 +162,7 @@
         previous-price="Cop $3.500"
         discount="5%"
         member="10% de descuento para miembros premium"
+        jpg="true"
       />
       </div>
     </div>
@@ -167,6 +177,7 @@
         previous-price="Cop $11.984"
         discount="5%"
         member="10% de descuento para miembros premium"
+        jpg="true"
       />
       <CardProducts
         img="garbanzo"
@@ -176,6 +187,7 @@
         previous-price="Cop $3.000"
         discount="5%"
         member="10% de descuento para miembros premium"
+        jpg="true"
       />
       <CardProducts
         img="lenteja"
@@ -185,6 +197,7 @@
         previous-price="Cop $12.784"
         discount="5%"
         member="10% de descuento para miembros premium"
+        jpg="true"
       />
       <CardProducts
         img="arveja"
@@ -194,6 +207,7 @@
         previous-price="Cop $7.200"
         discount="5%"
         member="10% de descuento para miembros premium"
+        jpg="true"
       />
       <CardProducts
         img="maiz"
@@ -203,6 +217,7 @@
         previous-price="Cop $3.500"
         discount="5%"
         member="10% de descuento para miembros premium"
+        jpg="true"
       />
       </div>
     </div>
@@ -216,7 +231,18 @@ import CardProducts from "../../components/CardProducts.vue";
 </script>
 
 <style lang="scss" scoped>
+@keyframes smooth {
+  0%{
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  100%{
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
 .home{
+  animation: smooth .5s ease;
   display: flex;
   flex-direction: column;
   gap: 24px;
